@@ -1,0 +1,27 @@
+{
+    "closed_guard": {
+      "id": "closed_guard",
+      "title": "Closed Guard",
+      "descriptionMarkdown": "Start in **closed guard** with posture control.\n\n- Break posture\n- Control sleeves or wrists\n- Prepare your attack"
+    },
+    "scissor_sweep": {
+      "id": "scissor_sweep",
+      "title": "Scissor Sweep",
+      "descriptionMarkdown": "Create angle, load opponent's weight, and execute the sweep.\n\n1. Shin across the torso\n2. Pull + chop\n3. Come up on top"
+    },
+    "hip_bump_sweep": {
+      "id": "hip_bump_sweep",
+      "title": "Hip Bump Sweep",
+      "descriptionMarkdown": "Sit up aggressively and bump with your hips while controlling arm/post.\n\nThis often chains well with kimura setups."
+    },
+    "triangle_choke": {
+      "id": "triangle_choke",
+      "title": "Triangle Choke",
+      "descriptionMarkdown": "Isolate one arm in, one arm out, lock the figure-four with your legs.\n\nAdjust angle before finishing."
+    },
+    "mount_control": {
+      "id": "mount_control",
+      "title": "Mount Control",
+      "descriptionMarkdown": "Stabilize top mount.\n\n- Knees tight\n- Hands posted wisely\n- Climb to high mount when possible"
+    }
+  }
