@@ -16,12 +16,14 @@ function getNextNodeIds(currentNodeId: NodeId, system: GraphSystem): NodeId[] {
     .filter((id): id is NodeId => id !== null);
 }
 
+
 export default function HomePage() {
   const [systemId, setSystemId] = useState("jiu-jitsu");
   const [system, setSystem] = useState<GraphSystem | null>(null);
   const [currentNodeId, setCurrentNodeId] = useState<NodeId | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [isLoading, setIsLoading] = useState(false);
+  const [history, setHistory] = useState<NodeId[]>([]);
 
   useEffect(() => {
     async function load() {
@@ -39,11 +41,13 @@ export default function HomePage() {
         const loadedSystem = data as GraphSystem;
         setSystem(loadedSystem);
         setCurrentNodeId(loadedSystem.adjacency.nodeIds[0] ?? null);
+        setHistory([]);
       } catch (err) {
         const message = err instanceof Error ? err.message : "Unknown error";
         setError(message);
         setSystem(null);
         setCurrentNodeId(null);
+        setHistory([]);
       } finally {
         setIsLoading(false);
       }
@@ -61,6 +65,24 @@ export default function HomePage() {
     if (!system || !currentNodeId) return [];
     return getNextNodeIds(currentNodeId, system);
   }, [system, currentNodeId]);
+
+  function goToNode(nextId: NodeId) {
+    if (!currentNodeId) return;
+  
+    setHistory((prev) => [...prev, currentNodeId]);
+    setCurrentNodeId(nextId);
+  }
+  
+  function goBack() {
+    setHistory((prev) => {
+      if (prev.length === 0) return prev;
+  
+      const previousNodeId = prev[prev.length - 1];
+      setCurrentNodeId(previousNodeId);
+  
+      return prev.slice(0, -1);
+    });
+  }
 
   return (
     <main className="mx-auto min-h-screen w-full max-w-4xl px-4 py-10">
@@ -85,9 +107,17 @@ export default function HomePage() {
               onClick={() => {
                 if (!system) return;
                 setCurrentNodeId(system.adjacency.nodeIds[0] ?? null);
+                setHistory([]);
               }}
             >
               Restart
+            </button>
+            <button
+              onClick={goBack}
+              disabled={history.length === 0}
+              className="rounded-lg border border-slate-300 bg-slate-100 px-3 py-2 text-sm hover:bg-slate-200 disabled:cursor-not-allowed disabled:opacity-50"
+            >
+              Back
             </button>
           </div>
         </div>
@@ -122,7 +152,7 @@ export default function HomePage() {
                     return (
                       <button
                         key={nextId}
-                        onClick={() => setCurrentNodeId(nextId)}
+                        onClick={() => goToNode(nextId)}
                         className="rounded-lg border border-blue-200 bg-blue-50 px-3 py-2 text-sm text-blue-700 hover:bg-blue-100"
                       >
                         {nextNode?.title ?? nextId}
