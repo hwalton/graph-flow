@@ -33,6 +33,55 @@ function isNodesById(value: unknown): value is NodesById {
   });
 }
 
+function validateGraphConsistency(
+  systemId: string,
+  nodes: NodesById,
+  adjacency: AdjacencyMatrix
+): void {
+  const { nodeIds, matrix } = adjacency;
+  const size = nodeIds.length;
+
+  if (size === 0) {
+    throw new Error(`System "${systemId}" has empty nodeIds in adjacency.json`);
+  }
+
+  const uniqueNodeIds = new Set(nodeIds);
+  if (uniqueNodeIds.size !== nodeIds.length) {
+    throw new Error(`System "${systemId}" has duplicate nodeIds in adjacency.json`);
+  }
+
+  const nodeKeys = new Set(Object.keys(nodes));
+  for (const nodeId of nodeIds) {
+    if (!nodeKeys.has(nodeId)) {
+      throw new Error(
+        `System "${systemId}" adjacency references missing node "${nodeId}" in nodes.json`
+      );
+    }
+  }
+
+  if (matrix.length !== size) {
+    throw new Error(
+      `System "${systemId}" matrix row count (${matrix.length}) must equal nodeIds length (${size})`
+    );
+  }
+
+  matrix.forEach((row, rowIndex) => {
+    if (row.length !== size) {
+      throw new Error(
+        `System "${systemId}" matrix row ${rowIndex} length (${row.length}) must equal ${size}`
+      );
+    }
+
+    row.forEach((cell, colIndex) => {
+      if (!Number.isInteger(cell) || (cell !== 0 && cell !== 1)) {
+        throw new Error(
+          `System "${systemId}" matrix cell [${rowIndex},${colIndex}] must be 0 or 1`
+        );
+      }
+    });
+  });
+}
+
 export async function loadSystem(systemId: string): Promise<GraphSystem> {
   const systemPath = path.join(process.cwd(), "content", "systems", systemId);
   const nodesPath = path.join(systemPath, "nodes.json");
@@ -53,6 +102,8 @@ export async function loadSystem(systemId: string): Promise<GraphSystem> {
   if (!isAdjacencyMatrix(parsedAdjacency)) {
     throw new Error(`Invalid adjacency.json for system "${systemId}"`);
   }
+
+  validateGraphConsistency(systemId, parsedNodes, parsedAdjacency);
 
   return {
     systemId,
