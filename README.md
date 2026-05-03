@@ -1,3 +1,11 @@
+# Graph Flow
+
+**Graph Flow** is an app for **training systems that are modeled as DAGs** (directed acyclic graphs): each node is a state or skill, and edges are valid next moves. You walk through the graph interactively instead of memorizing flat lists.
+
+The bundled **jiu-jitsu** system is one example—it encodes transitions between positions—but the same JSON shape applies to other procedures, curricula, or decision flows you want to practice.
+
+---
+
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 ## Getting Started
