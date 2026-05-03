@@ -82,8 +82,17 @@ function validateGraphConsistency(
   });
 }
 
-export async function loadSystem(systemId: string): Promise<GraphSystem> {
-  const systemPath = path.join(process.cwd(), "content", "systems", systemId);
+export type LoadSystemOptions = {
+  /** Repo root containing `content/systems/`; defaults to `process.cwd()` */
+  projectRoot?: string;
+};
+
+export async function loadSystem(
+  systemId: string,
+  options?: LoadSystemOptions
+): Promise<GraphSystem> {
+  const root = options?.projectRoot ?? process.cwd();
+  const systemPath = path.join(root, "content", "systems", systemId);
   const nodesPath = path.join(systemPath, "nodes.json");
   const adjacencyPath = path.join(systemPath, "adjacency.json");
 
