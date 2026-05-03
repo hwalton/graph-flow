@@ -134,9 +134,11 @@ export default function HomePage() {
           <section className="space-y-6">
             <div>
               <h2 className="mb-3 text-xl font-semibold text-slate-900">{currentNode.title}</h2>
-              <article className="prose prose-slate max-w-none">
-                <ReactMarkdown>{currentNode.descriptionMarkdown}</ReactMarkdown>
-              </article>
+              {currentNode.descriptionMarkdown.trim() !== "" && (
+                <article className="prose prose-slate max-w-none">
+                  <ReactMarkdown>{currentNode.descriptionMarkdown}</ReactMarkdown>
+                </article>
+              )}
             </div>
 
             <div>

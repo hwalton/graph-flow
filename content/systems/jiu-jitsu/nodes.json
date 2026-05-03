@@ -2,111 +2,111 @@
   "clinch": {
     "id": "clinch",
     "title": "Clinch",
-    "descriptionMarkdown": "Neutral standing tie-up.\n\n- Win inside control\n- Keep head position\n- Enter takedown or pull guard"
+    "descriptionMarkdown": ""
   },
   "single_leg_takedown": {
     "id": "single_leg_takedown",
     "title": "Single Leg Takedown",
-    "descriptionMarkdown": "Attack one leg and run the pipe or finish to the mat.\n\nCommon outcomes are top half guard or side control."
+    "descriptionMarkdown": ""
   },
   "double_leg_takedown": {
     "id": "double_leg_takedown",
     "title": "Double Leg Takedown",
-    "descriptionMarkdown": "Level change, penetrate, connect hands, and drive through.\n\nTry to land in a strong passing position."
+    "descriptionMarkdown": ""
   },
   "guard_pull": {
     "id": "guard_pull",
     "title": "Guard Pull",
-    "descriptionMarkdown": "Pull opponent into your guard with grips and posture control.\n\nUse this to enter closed guard or 50-50."
+    "descriptionMarkdown": ""
   },
   "closed_guard": {
     "id": "closed_guard",
     "title": "Closed Guard",
-    "descriptionMarkdown": "Strong bottom control with legs locked.\n\n- Break posture\n- Angle hips\n- Chain sweeps and submissions"
+    "descriptionMarkdown": ""
   },
   "half_guard": {
     "id": "half_guard",
     "title": "Half Guard",
-    "descriptionMarkdown": "One of opponent's legs trapped.\n\nCan be used to recover guard, sweep, or get passed by pressure passing."
+    "descriptionMarkdown": ""
   },
   "side_control": {
     "id": "side_control",
     "title": "Side Control",
-    "descriptionMarkdown": "Chest-to-chest top control.\n\n- Crossface and underhook\n- Control hips\n- Transition to mount, kesa, or north-south"
+    "descriptionMarkdown": ""
   },
   "mount": {
     "id": "mount",
     "title": "Mount",
-    "descriptionMarkdown": "Dominant top position.\n\n- Knees tight\n- Heavy hips\n- Attack armbar or force defensive reactions"
+    "descriptionMarkdown": ""
   },
   "north_south": {
     "id": "north_south",
     "title": "North-South",
-    "descriptionMarkdown": "Top control with torso over opponent's head.\n\nUse to stabilize and isolate arms for submissions."
+    "descriptionMarkdown": ""
   },
   "kesa_gatame": {
     "id": "kesa_gatame",
     "title": "Kesa Gatame",
-    "descriptionMarkdown": "Scarf-hold side control variation.\n\nStrong pinning position with pressure and transitions back to mount or side."
+    "descriptionMarkdown": ""
   },
   "fifty_fifty": {
     "id": "fifty_fifty",
     "title": "50-50 Guard",
-    "descriptionMarkdown": "Symmetric leg entanglement.\n\nEntries to straight ankle lock, sweeps, or disengagement back to upper-body guard."
+    "descriptionMarkdown": ""
   },
   "knee_cut_pass": {
     "id": "knee_cut_pass",
     "title": "Knee Cut Pass",
-    "descriptionMarkdown": "Classic pressure pass through half/open guard.\n\nCrossface, staple, cut knee through to side control or mount."
+    "descriptionMarkdown": ""
   },
   "toreando_pass": {
     "id": "toreando_pass",
     "title": "Toreando Pass",
-    "descriptionMarkdown": "Bullfighter pass around the legs.\n\nMove hips laterally and circle to side control or kesa."
+    "descriptionMarkdown": ""
   },
   "scissor_sweep": {
     "id": "scissor_sweep",
     "title": "Scissor Sweep",
-    "descriptionMarkdown": "Closed/open guard sweep using push-pull and shin frame.\n\nFinish by coming up to mount."
+    "descriptionMarkdown": ""
   },
   "hip_bump_sweep": {
     "id": "hip_bump_sweep",
     "title": "Hip Bump Sweep",
-    "descriptionMarkdown": "Sit-up sweep to off-balance opponent posturing up.\n\nCan chain into kimura if they base hard."
+    "descriptionMarkdown": ""
   },
   "butterfly_sweep": {
     "id": "butterfly_sweep",
     "title": "Butterfly Sweep",
-    "descriptionMarkdown": "Elevate and tilt with butterfly hooks.\n\nUse angle and upper-body control to come on top."
+    "descriptionMarkdown": ""
   },
   "kimura": {
     "id": "kimura",
     "title": "Kimura",
-    "descriptionMarkdown": "Figure-four shoulder lock from multiple positions.\n\nCan finish submission or force transitions to dominant top positions."
+    "descriptionMarkdown": ""
   },
   "triangle_choke": {
     "id": "triangle_choke",
     "title": "Triangle Choke",
-    "descriptionMarkdown": "One-arm-in, one-arm-out leg choke.\n\nCut angle, lock legs, and finish with posture control."
+    "descriptionMarkdown": ""
   },
   "armbar_from_mount": {
     "id": "armbar_from_mount",
     "title": "Armbar From Mount",
-    "descriptionMarkdown": "Isolate an arm from mount and fall to the side for extension.\n\nPinch knees and control thumb line."
+    "descriptionMarkdown": ""
   },
   "straight_ankle_lock": {
     "id": "straight_ankle_lock",
     "title": "Straight Ankle Lock",
-    "descriptionMarkdown": "Basic leg lock often accessed from 50-50 or ashi-style entanglements.\n\nControl heel line and apply pressure through hips."
+    "descriptionMarkdown": ""
   },
   "mount_escape_elbow_knee": {
     "id": "mount_escape_elbow_knee",
     "title": "Mount Escape (Elbow-Knee)",
-    "descriptionMarkdown": "Defensive escape from bottom mount.\n\nCreate frames, shrimp, insert knee, and recover half or closed guard."
+    "descriptionMarkdown": ""
   },
   "side_control_escape_shrimp": {
     "id": "side_control_escape_shrimp",
     "title": "Side Control Escape (Shrimp)",
-    "descriptionMarkdown": "Defensive movement to recover guard from side control.\n\nFrame at neck/hip, shrimp, and re-guard."
+    "descriptionMarkdown": ""
   }
 }
